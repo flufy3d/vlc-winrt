@@ -173,7 +173,7 @@ cd $CONTRIB_FOLDER
     --enable-vpx \
     --enable-libdsm \
     --disable-mfx \
-    --disable-x264 \
+    --enable-x264 \
     --disable-x265 \
     --disable-srt \
     --disable-aom
