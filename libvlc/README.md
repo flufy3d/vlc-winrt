@@ -13,3 +13,6 @@
 * git am -3 /d/Projects/vlc-winrt/libvlc/patches/*.patch
 * //git gen patch -n the recent n commit
 * git format-patch -1
+* //Package Manager Console in Visual Studio
+* Install-Package c:\temp\packages\jQuery.1.10.2.nupkg
+* Install-Package https://globalcdn.nuget.org/packages/microsoft.aspnet.mvc.5.2.3.nupkg
