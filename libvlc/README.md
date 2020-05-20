@@ -9,3 +9,7 @@
 * docker rmi 1b70dfa01a17
 * //clear unused resource
 * docker system prune
+* //git apply patch
+* git am -3 /d/Projects/vlc-winrt/libvlc/patches/*.patch
+* //git gen patch -n the recent n commit
+* git format-patch -1
