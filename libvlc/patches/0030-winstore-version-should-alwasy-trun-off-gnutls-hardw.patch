@@ -1,0 +1,28 @@
+From 251fc4d787c39928853b646742109743d7c6b642 Mon Sep 17 00:00:00 2001
+From: flufy3d <flufy3d@gmail.com>
+Date: Thu, 21 May 2020 12:26:00 +0200
+Subject: [PATCH] winstore version should alwasy trun off gnutls hardware
+ acceleration
+
+---
+ contrib/src/gnutls/rules.mak | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/contrib/src/gnutls/rules.mak b/contrib/src/gnutls/rules.mak
+index 4281419a05..f446049c7d 100644
+--- a/contrib/src/gnutls/rules.mak
++++ b/contrib/src/gnutls/rules.mak
+@@ -74,10 +74,8 @@ ifdef HAVE_TIZEN
+ 	GNUTLS_CONF += --with-default-trust-store-dir=/etc/ssl/certs/
+ endif
+ ifdef HAVE_WINSTORE
+-ifeq ($(ARCH),x86_64)
+ 	GNUTLS_CONF += --disable-hardware-acceleration
+ endif
+-endif
+ ifdef HAVE_WIN32
+ ifdef HAVE_CLANG
+ ifeq ($(ARCH),aarch64)
+-- 
+2.24.1.windows.2
+
