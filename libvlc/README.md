@@ -3,8 +3,8 @@
 
 
 ## Tips
-* docker build -t vlc_build_image:3.2.0 .
-* docker run -it -v //host_mnt/$(pwd)://build  --name vlc vlc_build_image:3.2.0 bash
+* docker build -t vlc_build_image .
+* docker run -it -v //host_mnt/$(pwd)://build  --name vlc vlc_build_image bash
 * //delete image
 * docker rmi 1b70dfa01a17
 * //clear unused resource
