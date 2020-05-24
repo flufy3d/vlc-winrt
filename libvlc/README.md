@@ -5,6 +5,7 @@
 ## Tips
 * docker build -t vlc_build_image .
 * docker run -it -v //host_mnt/$(pwd)://build  --name vlc vlc_build_image bash
+* sudo docker run -it -v /$(pwd):/build  --name vlc registry.videolan.org/vlc-debian-llvm-mingw bash
 * //delete image
 * docker rmi 1b70dfa01a17
 * //clear unused resource
