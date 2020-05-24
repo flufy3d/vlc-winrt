@@ -1,0 +1,30 @@
+From d8f22026d82574b4fb399a1d6dfc4c78521ffcda Mon Sep 17 00:00:00 2001
+From: flufy3d <flufy3d@gmail.com>
+Date: Wed, 20 May 2020 17:22:58 +0200
+Subject: [PATCH] force allow self-signed certificate
+
+---
+ modules/misc/gnutls.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/modules/misc/gnutls.c b/modules/misc/gnutls.c
+index 51a8b5c022..e9308958af 100644
+--- a/modules/misc/gnutls.c
++++ b/modules/misc/gnutls.c
+@@ -482,10 +482,12 @@ static int gnutls_ClientHandshake(vlc_tls_creds_t *creds, vlc_tls_t *tls,
+             return 0;
+         case GNUTLS_E_NO_CERTIFICATE_FOUND:
+             msg_Dbg(creds, "no known certificates for %s", host);
++            msg_Dbg(creds, "but flufy3d allow it pass!");
+             msg = N_("However, the security certificate presented by the "
+                 "server is unknown and could not be authenticated by any "
+                 "trusted Certificate Authority.");
+-            break;
++            //break;
++            return 0;
+         case GNUTLS_E_CERTIFICATE_KEY_MISMATCH:
+             msg_Dbg(creds, "certificate keys mismatch for %s", host);
+             msg = N_("However, the security certificate presented by the "
+-- 
+2.24.1.windows.2
+
